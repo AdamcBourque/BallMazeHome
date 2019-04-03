@@ -39,7 +39,7 @@
         android:textSize="@android:dimen/app_icon_size"
         android:padding="10dp"
         android:textColor="@color/colorAccent"
-        android:onClick="holder"
+        android:onClick="button_click"
         android:layout_weight="1"/>
 
     <TextView
@@ -48,7 +48,7 @@
         android:layout_weight="1"/>
 
     <Button
-        android:id="@+id/high_score2"
+        android:id="@+id/high_scores"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/high_scores"
@@ -56,7 +56,7 @@
         android:textSize="@android:dimen/app_icon_size"
         android:padding="10dp"
         android:textColor="@color/colorAccent"
-        android:onClick="holder"
+        android:onClick="button_click"
         android:layout_weight="1"/>
 
     <TextView
@@ -73,7 +73,7 @@
         android:textSize="@android:dimen/app_icon_size"
         android:padding="10dp"
         android:textColor="@color/colorAccent"
-        android:onClick="holder"
+        android:onClick="button_click"
         android:layout_weight="1" />
 
     <TextView
@@ -90,13 +90,13 @@
         android:textSize="@android:dimen/app_icon_size"
         android:padding="10dp"
         android:textColor="@color/colorAccent"
-        android:onClick="holder"
+        android:onClick="button_click"
         android:layout_weight="1" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
-        
+
 
 </LinearLayout>
