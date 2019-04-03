@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Ball Maze</string>
+    <string name="title">Stars:  </string>
+    <string name="diffi">Difficulty</string>
+    <string name="skins">Skins</string>
+    <string name="info">Information</string>
+    <string name="high_scores">High Scores</string>
+    <string name="stars">0</string>
+    <string name="time_easy">0:00</string>
+    <string name="time_normal">0:00</string>
+    <string name="time_hard">0:00</string>
+    <string name="time_temp">0</string>
+</resources>
