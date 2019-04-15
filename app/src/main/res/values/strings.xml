@@ -6,6 +6,9 @@
     <string name="info">Information</string>
     <string name="high_scores">High Scores</string>
     <string name="stars">0</string>
+    <string name="easydif">Plebian</string>
+    <string name="meddif">Normie</string>
+    <string name="harddif">Hard UwU</string>
     <string name="time_easy">0:00</string>
     <string name="time_normal">0:00</string>
     <string name="time_hard">0:00</string>

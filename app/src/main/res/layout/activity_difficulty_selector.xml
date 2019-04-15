@@ -31,10 +31,10 @@
 
 
     <Button
-        android:id="@+id/diffi"
+        android:id="@+id/pleb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/diffi"
+        android:text="@string/easydif"
         android:background="@color/colorPrimaryDark"
         android:textSize="@android:dimen/app_icon_size"
         android:padding="10dp"
@@ -48,10 +48,10 @@
         android:layout_weight="1"/>
 
     <Button
-        android:id="@+id/high_scores"
+        android:id="@+id/norm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/high_scores"
+        android:text="@string/meddif"
         android:background="@color/colorPrimaryDark"
         android:textSize="@android:dimen/app_icon_size"
         android:padding="10dp"
@@ -65,10 +65,10 @@
         android:layout_weight="1" />
 
     <Button
-        android:id="@+id/skins"
+        android:id="@+id/hard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/skins"
+        android:text="@string/harddif"
         android:background="@color/colorPrimaryDark"
         android:textSize="@android:dimen/app_icon_size"
         android:padding="10dp"
