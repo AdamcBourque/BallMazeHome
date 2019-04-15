@@ -13,5 +13,6 @@
     <string name="time_normal">0:00</string>
     <string name="time_hard">0:00</string>
     <string name="time_temp">0</string>
+    <string name="time_active">0</string>
     <string name="title_activity_high_score">high_score</string>
 </resources>
