@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="temp: "
+            android:text="Plebian:"
             android:textSize="36dp"
             android:padding="10dp"/>
 
@@ -45,7 +45,7 @@
             android:id="@+id/hi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="temp: "
+            android:text="@string/time_easy"
             android:textSize="36dp"
             android:padding="10dp"/>
 
@@ -59,7 +59,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="temp: "
+            android:text="Normie: "
             android:textSize="36dp"
             android:padding="10dp"/>
 
@@ -67,7 +67,7 @@
             android:id="@+id/hi2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="temp: "
+            android:text="@string/time_normal"
             android:textSize="36dp"
             android:padding="10dp"/>
 
@@ -81,7 +81,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="temp: "
+            android:text="Hard UwU: "
             android:textSize="36dp"
             android:padding="10dp"/>
 
@@ -89,7 +89,7 @@
             android:id="@+id/hi3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="temp: "
+            android:text="@string/time_hard"
             android:textSize="36dp"
             android:padding="10dp"/>
 

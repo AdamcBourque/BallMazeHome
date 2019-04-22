@@ -56,6 +56,7 @@
         android:textSize="@android:dimen/app_icon_size"
         android:padding="10dp"
         android:textColor="@color/colorAccent"
+        android:clickable="@bool/normie_unlock"
         android:onClick="button_click"
         android:layout_weight="1"/>
 
@@ -73,6 +74,7 @@
         android:textSize="@android:dimen/app_icon_size"
         android:padding="10dp"
         android:textColor="@color/colorAccent"
+        android:clickable="@bool/hard_unlock"
         android:onClick="button_click"
         android:layout_weight="1" />
 
