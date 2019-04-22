@@ -1,0 +1,56 @@
+User’s Manual for Maze App
+By Cheyenne Hall-Champine, Adam Bourque, Zachary Hess
+
+Table of Contents:
+
+
+1 - Information (Page 1)
+
+
+2 - Requirements (Page 1)
+
+
+3 - First Time Opening the App (Page 1)
+
+
+4 - Features (Page 1)
+
+
+5 - When this happens (Page 2)
+
+
+6 - Diagram of the Program (Page 3)
+
+
+
+1. Introduction:
+Hello, valued customer! Welcome to this maze app! In this game, your goal is to navigate around the maze and get the end goal hole. Start with easy, and progress up to impossible mode by playing more levels. The harder the level, the more stars you get for completing levels. Completing challenges, along with completing the level, will give you more stars as well. The more stars you have, the more skins you unlock for the ball and background.
+
+2. Requirements: 
+To use this app, you must have an android device. You must have also installed the app. To have installed the app you must have enough available memory. If the app doesn't load, you probably need a new phone. Opposable thumbs are recommended. 
+
+3. First Time Opening the App:
+Click “difficulty select” and select an unlocked difficulty which changes by increasing the mazes size(the grid of the made). If it is truly the first time, the only unlocked difficulty would be "easy”. A maze will generate and the goal is to move the ball into the hole, navigating through the maze. To do this, tilt the phone in different directions to move the ball in the corresponding direction. The quicker the ball makes it to the hole, the more possible stars that could be earned, and a new “best time” will be placed for the difficulty. Beating the “best time” will give the player another star. 
+
+4. Features:
+Stars: stars exist to keep track of you achievement level. Stars can be used to unlock new skins(1). Stars are acquired by completing mazes.
+
+Difficulty levels: Difficulty will be on a scale of easy to difficult (impossible is just a meme). Size of mazes and obstacles will vary with level.
+
+Pause the game: Be able to pause the game, which pauses the timer. This menu contains the options to quit the level, and restart it. 
+Restarting the Level: which would then start the ball at the at the beginning and reset the timer.
+
+Skins: Skins make things look different. These can be obtained by stars.
+
+High scores: your fastest runs of each difficulty will be save for you to show off to your friends (sold separately).
+
+Information: The button that got you here. 
+
+
+5. When this happens, do this:
+If a skin is not working properly, the user should check if the app is up to date. If it is, and the skin is still not working properly, completely close the app and try again once the user is connected to the internet. 
+If the maze has trapped the ball somewhere and it’s not possible to get out, close the level and try another. If the ball is stuck in a wall (for example); restart the level in the menu by pausing the game and pressing the “reset level” button. 
+If the app is not responding to the user tilting their phone, the user should check if their device is up to date, if their accelerometer driver is up to date, and if their device has an accelerometer. If all three answers are true, then please restart the app. If the problem still persists, then the user may have to restart their device, as the driver may not be working properly. If the problem persists after restarting the app and their device, please use the “Contact Us” button in the options of the main menu, as this may be occuring with other players as well.
+If the user has no stars, and it is not a fresh download or reset of progress, the user should check if the app is up to date. If it is, the file that holds how many stars may have been moved, renamed, or corrupted. If it was moved or renamed, click on the options of the main menu and go to the “save data” section. Above the “Reset all progress” button, tap on the “locate save file” button. This will then prompt the question “Are you sure?” before bringing the user to a file explorer that shows where the save file would be. Navigate to where it is placed, if the file is relocated and tap on the file. By default, this file should be called “Save_Data.txt”, unless the file was renamed to something else. After telling the app where the save file is, the app will need to restart before loading the file.
+
+Any problems you may be experiencing that is not listed above? Go to the options in the main menu and use the email at the bottom of the screen to contact us at BallMaze@gmail.com.
