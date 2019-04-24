@@ -6,4 +6,188 @@
     tools:context=".skins"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="@string/title"
+            android:textSize="@android:dimen/notification_large_icon_height"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/star_count"
+            android:text="@string/stars"
+            android:textSize="@android:dimen/notification_large_icon_height"
+            android:padding="15dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="105dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="32dp"
+            android:text="@string/skin_default"
+            android:textSize="34px"
+            />
+        <TextView
+            android:layout_width="105dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="28dp"
+            android:text="@string/skin_soda"
+            android:textSize="34px"
+            />
+        <TextView
+            android:layout_width="105dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="24dp"
+            android:text="@string/skin_soda"
+            android:textSize="34px"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_weight="0.03"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_marginLeft="25dp" />
+
+        <Button
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_marginLeft="25dp" />
+
+        <Button
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_marginLeft="25dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="105dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="32dp"
+            android:text="@string/skin_soda"
+            android:textSize="34px"
+            />
+        <TextView
+            android:layout_width="105dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="28dp"
+            android:text="@string/skin_soda"
+            android:textSize="34px"
+            />
+        <TextView
+            android:layout_width="105dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="24dp"
+            android:text="@string/skin_soda"
+            android:textSize="34px"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.03"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_marginLeft="25dp"
+            />
+        <Button
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_marginLeft="25dp"
+            />
+        <Button
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_marginLeft="25dp"
+            />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="105dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="32dp"
+            android:text="@string/skin_soda"
+            android:textSize="34px"
+            />
+        <TextView
+            android:layout_width="105dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="28dp"
+            android:text="@string/skin_soda"
+            android:textSize="34px"
+            />
+        <TextView
+            android:layout_width="105dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="24dp"
+            android:text="@string/skin_soda"
+            android:textSize="34px"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.04"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_marginLeft="25dp"
+            />
+        <Button
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_marginLeft="25dp"
+            />
+        <Button
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_marginLeft="25dp"
+            />
+
+    </LinearLayout>
+
 </LinearLayout>

@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#5F6FB3</color> 
+    <!-- Main color scheme -->
+    <color name="colorPrimary">#5F6FB3</color>
     <color name="colorPrimaryDark">#00495F</color>
     <color name="colorAccent">#CECACA</color>
+
+    <!-- "peculiar soda" skin colors -->
+    <color name="sodaRed">#eb1933</color>
+    <color name="sodaWhite">#FFFFFF</color>
+    <color name="sodaBlue">#2151a1</color>
+
+
     <color name="skin1_buttons">#008577</color>
     <color name="skin1_btn_text">#00574B</color>
     <color name="skin1_background">#D81B60</color>
     <color name="skin1_main_text">#008577</color>
     <color name="skin1_maze_walls">#00574B</color>
-    <color name="skin1_ball">#D81B60</color>
+    <color name="skin1_ball">#919191</color>
 </resources>

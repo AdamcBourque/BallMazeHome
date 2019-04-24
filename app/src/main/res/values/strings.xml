@@ -15,4 +15,8 @@
     <string name="time_temp">0</string>
     <string name="time_active">0</string>
     <string name="title_activity_high_score">high_score</string>
+
+    <string name="skin_default">Default Skin</string>
+    <string name="skin_soda">Peculiar Soda</string>
+
 </resources>
