@@ -18,7 +18,6 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
     private int currentSensor;
     private long lastUpdate = 0;
     private float last_x, last_y, last_z;
-    private static final int SHAKE_THRESHOLD = 600;
     private ImageView ball;
 
     @Override
