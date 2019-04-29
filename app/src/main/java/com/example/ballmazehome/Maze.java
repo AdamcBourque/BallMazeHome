@@ -59,10 +59,13 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                     last_x = x;
                     last_y = y;
                     last_z = z;
-                    // while to test boarders
-                    while (0 < ball.getLeft() && ball.getLeft() < maze.getLeft() && 0 < ball.getTop() && ball.getTop() < maze.getTop()){
+                    // if else to test boarders
+                    if (0 < ball.getLeft() && ball.getLeft() < maze.getLeft() && 0 < ball.getTop() && ball.getTop() < maze.getTop()){
                         ball.setLeft((ball.getLeft() + (int)speed));
                         ball.setTop((ball.getTop() + (int)speed));
+                    }else{
+                        ball.setLeft((ball.getLeft() - (int)speed));
+                        ball.setTop((ball.getTop() - (int)speed));
                     }
                 }
             }
