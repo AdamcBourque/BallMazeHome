@@ -6,6 +6,7 @@
     tools:context=".skins"
     android:orientation="vertical">
 
+    <!-- Star counter -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,6 +29,7 @@
             />
     </LinearLayout>
 
+    <!-- Text for skin buttons one through three -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,7 +58,8 @@
             />
 
     </LinearLayout>
-    // dump marginLeft things and use dp so it displays properly on different size screens
+
+    <!-- Buttons for skins one through three -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="1px"
@@ -64,23 +67,30 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/skin_default"
             android:layout_width="105dp"
             android:layout_height="105dp"
-            android:layout_marginLeft="25dp" />
+            android:layout_marginLeft="25dp"
+            />
 
         <Button
+            android:id="@+id/skin_peculiar_soda"
             android:layout_width="105dp"
             android:layout_height="105dp"
-            android:layout_marginLeft="25dp" />
+            android:layout_marginLeft="25dp"
+            />
 
         <Button
+            android:id="@+id/skin_three"
             android:layout_width="105dp"
             android:layout_height="105dp"
-            android:layout_marginLeft="25dp" />
+            android:layout_marginLeft="25dp"
+            />
 
 
     </LinearLayout>
 
+    <!-- Text for skin buttons four through six -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -107,9 +117,9 @@
             android:text="@string/skin_soda"
             android:textSize="34px"
             />
-
     </LinearLayout>
 
+    <!-- Buttons for skins four through six -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="1px"
@@ -118,25 +128,26 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/skin_four"
             android:layout_width="105dp"
             android:layout_height="105dp"
             android:layout_marginLeft="25dp"
             />
         <Button
+            android:id="@+id/skin_five"
             android:layout_width="105dp"
             android:layout_height="105dp"
             android:layout_marginLeft="25dp"
             />
         <Button
+            android:id="@+id/skin_six"
             android:layout_width="105dp"
             android:layout_height="105dp"
             android:layout_marginLeft="25dp"
             />
-
-
-
     </LinearLayout>
 
+    <!-- Text for skin buttons seven through nine -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -165,6 +176,7 @@
             />
     </LinearLayout>
 
+    <!-- Buttons for skins seven through nine -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="1px"
@@ -173,21 +185,23 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/skin_seven"
             android:layout_width="105dp"
             android:layout_height="105dp"
             android:layout_marginLeft="25dp"
             />
         <Button
+            android:id="@+id/skin_eight"
             android:layout_width="105dp"
             android:layout_height="105dp"
             android:layout_marginLeft="25dp"
             />
         <Button
+            android:id="@+id/skin_nine"
             android:layout_width="105dp"
             android:layout_height="105dp"
             android:layout_marginLeft="25dp"
             />
-
     </LinearLayout>
 
 </LinearLayout>
