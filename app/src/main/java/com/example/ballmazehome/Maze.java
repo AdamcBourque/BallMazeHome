@@ -57,6 +57,7 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                     last_x = x;
                     last_y = y;
                     last_z = z;
+                    // adjust here to make usable
                     ball.setLeft((ball.getLeft() + (int)speed));
                     ball.setTop((ball.getTop() + (int)speed));
 
