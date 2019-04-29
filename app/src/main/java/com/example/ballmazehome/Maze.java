@@ -18,7 +18,7 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
     private SensorManager sensorManager;
     private int currentSensor;
     private long lastUpdate = 0;
-    private float last_x, last_y, last_z;
+    private float last_x, last_y, last_z, ballX, ballY;
     private ImageView ball;
     private FrameLayout maze;
 
@@ -31,6 +31,8 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
         ball = findViewById(R.id.ball);
         currentSensor = Sensor.TYPE_ACCELEROMETER;
         maze = findViewById(R.id.maze);
+        ballX = ball.getX();
+        ballY = ball.getY();
     }
 
     public boolean checkSensorAvailability(int sensorType) {
@@ -50,23 +52,21 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                 float z = event.values[2];
                 long curTime = System.currentTimeMillis();
 
-                if ((curTime - lastUpdate) > 100) {
+                if ((curTime - lastUpdate) > 50) {
                     long diffTime = (curTime - lastUpdate);
                     lastUpdate = curTime;
 
-                    float speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 1000; // divided by 10
+                    float speedX = x / Math.abs(diffTime) * 1000; // divided by 10
+                    float speedY = y / Math.abs(diffTime) * 1000;
 
                     last_x = x;
                     last_y = y;
                     last_z = z;
-                    // if else to test boarders
-                    if (0 < ball.getLeft() && ball.getLeft() < maze.getLeft() && 0 < ball.getTop() && ball.getTop() < maze.getTop()){
-                        ball.setLeft((ball.getLeft() + (int)speed));
-                        ball.setTop((ball.getTop() + (int)speed));
-                    }else{
-                        ball.setLeft((ball.getLeft() - (int)speed));
-                        ball.setTop((ball.getTop() - (int)speed));
-                    }
+
+                    ballX = ballX - speedX;
+                    ball.setX(ballX);
+                    ballY = ballY + speedY;
+                    ball.setY(ballY);
                 }
             }
         }
