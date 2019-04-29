@@ -8,6 +8,7 @@ import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
     private long lastUpdate = 0;
     private float last_x, last_y, last_z;
     private ImageView ball;
+    private FrameLayout maze;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         ball = findViewById(R.id.ball);
         currentSensor = Sensor.TYPE_ACCELEROMETER;
+        maze = findViewById(R.id.maze);
     }
 
     public boolean checkSensorAvailability(int sensorType) {
@@ -51,15 +54,16 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                     long diffTime = (curTime - lastUpdate);
                     lastUpdate = curTime;
 
-                    float speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
+                    float speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 1000; // divided by 10
 
                     last_x = x;
                     last_y = y;
                     last_z = z;
-                    // adjust here to make usable
-                    ball.setLeft((ball.getLeft() + (int)speed));
-                    ball.setTop((ball.getTop() + (int)speed));
-
+                    // while to test boarders
+                    while (0 < ball.getLeft() && ball.getLeft() < maze.getLeft() && 0 < ball.getTop() && ball.getTop() < maze.getTop()){
+                        ball.setLeft((ball.getLeft() + (int)speed));
+                        ball.setTop((ball.getTop() + (int)speed));
+                    }
                 }
             }
         }
