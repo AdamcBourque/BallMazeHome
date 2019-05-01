@@ -1,15 +1,20 @@
 package com.example.ballmazehome;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Point;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class Maze extends AppCompatActivity implements SensorEventListener {
@@ -18,9 +23,12 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
     private SensorManager sensorManager;
     private int currentSensor;
     private long lastUpdate = 0;
-    private float last_x, last_y, last_z, ballX, ballY;
+    private float ballX, ballY;
     private ImageView ball;
     private FrameLayout maze;
+    int xMax = Resources.getSystem().getDisplayMetrics().widthPixels;
+    int yMax = Resources.getSystem().getDisplayMetrics().heightPixels;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,20 +60,25 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                 float z = event.values[2];
                 long curTime = System.currentTimeMillis();
 
-                if ((curTime - lastUpdate) > 50) {
+                if ((curTime - lastUpdate) > 10) {
                     long diffTime = (curTime - lastUpdate);
                     lastUpdate = curTime;
 
                     float speedX = x / Math.abs(diffTime) * 1000; // divided by 10
                     float speedY = y / Math.abs(diffTime) * 1000;
 
-                    last_x = x;
-                    last_y = y;
-                    last_z = z;
 
-                    ballX = ballX - speedX;
+                    if (ballX < 0 || ballX > xMax){
+                        ballX = ballX + 2*speedX;
+                    }else{
+                        ballX = ballX - speedX;
+                    }
+                    if (ballY < 0 || ballY > yMax){
+                        ballY = ballY + 2*speedY;
+                    }else{
+                        ballY = ballY - speedY;
+                    }
                     ball.setX(ballX);
-                    ballY = ballY + speedY;
                     ball.setY(ballY);
                 }
             }
