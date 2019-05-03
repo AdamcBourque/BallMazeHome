@@ -13,8 +13,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 import android.widget.ImageView;
-
-
+import android.widget.Toast;
 
 
 public class Maze extends AppCompatActivity implements SensorEventListener {
@@ -106,9 +105,10 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                     ball_image.setY(ballY);
                     ball.offsetTo((int)ballX, (int)ballY);
                     if (collides(goal)){
+                        Toast.makeText(this, "WRYYYYY!!", Toast.LENGTH_LONG).show();
                         stopTime = SystemClock.uptimeMillis();
                         totalTime = stopTime - startTime;
-                        startActivity(test);
+                        //startActivity(test);
                     }
                 }
             }
@@ -138,7 +138,6 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
             return false;
         }
     }
-
 }
 
 
