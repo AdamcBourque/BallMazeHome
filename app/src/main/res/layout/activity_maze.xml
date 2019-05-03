@@ -15,7 +15,7 @@
 
         <ImageView
             android:id="@+id/ball"
-            android:layout_width="62dp"
+            android:layout_width="75dp"
             android:layout_height="75dp"
             android:src="@drawable/ic_launcher_foreground"
             tools:srcCompat="@android:drawable/ic_notification_overlay" />

@@ -75,10 +75,10 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                 DisplayMetrics displayMetrics = new DisplayMetrics();
                 WindowManager windowmanager = (WindowManager) getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
                 windowmanager.getDefaultDisplay().getMetrics(displayMetrics);
-                int deviceWidth = 5 * displayMetrics.widthPixels;
-                int deviceHeight = 10 * displayMetrics.heightPixels;
-                float xMax = deviceWidth / 6;
-                float yMax = deviceHeight / 13;
+                int deviceWidth = displayMetrics.widthPixels;
+                int deviceHeight = displayMetrics.heightPixels;
+                float xMax = deviceWidth - 160;
+                float yMax = deviceHeight - 320;
                 long curTime = System.currentTimeMillis();
 
                 if ((curTime - lastUpdate) > 0.00001) {
@@ -123,9 +123,7 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
     @Override
     protected void onResume() {
         super.onResume();
-
         sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
-
     }
     @Override
     protected void onPause() {
