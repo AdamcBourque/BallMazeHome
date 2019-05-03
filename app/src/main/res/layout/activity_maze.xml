@@ -20,6 +20,11 @@
             android:src="@drawable/ic_launcher_foreground"
             tools:srcCompat="@android:drawable/ic_notification_overlay" />
 
+        <ImageView
+            android:id="@+id/goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher_round" />
     </FrameLayout>
 
 </LinearLayout>
