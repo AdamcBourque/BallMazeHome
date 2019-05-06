@@ -2,18 +2,26 @@ package com.example.ballmazehome;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.SystemClock;
+import android.support.constraint.solver.widgets.Rectangle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileInputStream;
 
 
 public class Maze extends AppCompatActivity implements SensorEventListener {
@@ -21,17 +29,21 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
     private long  startTime, stopTime, totalTime;
     private Sensor accelerometer;
     private SensorManager sensorManager;
-    private int currentSensor;
+    private int currentSensor, num_walls;
     private long lastUpdate = 0;
     private float ballX = 30, ballY = 30;
     private ImageView ball_image, goal_image;
-    private Rect ball, goal;
-    Intent test = new Intent (this, high_score.class);
+    private Rect ball, goal, walls[];
+    private ImageView wall_images[];
+    private FrameLayout maze;
+   // Intent test = new Intent (this, high_score.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maze);
+        maze = findViewById(R.id.maze);
+        num_walls = 8;
         sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         ball_image = findViewById(R.id.ball);
@@ -49,8 +61,34 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
         float yMax = deviceHeight / 13;
         goal = new Rect();
         ball = new Rect();
+        walls = new Rect[num_walls];
+        for (int i = 0; i < num_walls; i++){
+            walls[i] = new Rect();
+        }
         ballX = ball.left;
         ballY = ball.top;
+        walls[0].set(150, 150, 190, 300);
+        walls[1].set(150, 300, 400, 340);
+        walls[2].set(360, 340, 400, 640);
+        walls[3].set(150, 540, 190, 840);
+        walls[4].set(360, 640, deviceWidth / 5, 680);
+        walls[5].set(0, 840, 190, 880);
+        walls[6].set(360, 840, 400, deviceHeight / 10);
+        walls[7].set(150, 150, deviceWidth / 5 - 200, 190);
+
+        wall_images = new ImageView[num_walls];
+
+        for (int i = 0; i < num_walls; i++){
+           wall_images[i] = new ImageView(getApplicationContext());
+           maze.addView(wall_images[i]);
+           wall_images[i].setX(walls[i].left);
+           wall_images[i].setY(walls[i].top);
+           wall_images[i].getLayoutParams().height = walls[i].bottom - walls[i].top;
+           wall_images[i].getLayoutParams().width = walls[i].right - walls[i].left;
+           wall_images[i].setBackgroundColor(Color.BLACK);
+           wall_images[i].setVisibility(View.VISIBLE);
+        }
+
         goal.set((int)(xMax - 80), (int)(yMax - 80), (int)xMax, (int)yMax);
         ball.set((int)ballX, (int)ballY, (int)(ballX+80), (int)(ballY+80));
         goal_image.setX(xMax - 80);
@@ -104,10 +142,16 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                     ball_image.setX(ballX);
                     ball_image.setY(ballY);
                     ball.offsetTo((int)ballX, (int)ballY);
+                    if (collides(walls[0]) || collides(walls[1]) || collides(walls[2]) || collides(walls[3]) || collides(walls[4]) || collides(walls[5])
+                            || collides(walls[6]) || collides(walls[7])){
+                        ballX = ballX + speedX;
+                        ballY = ballY - speedY;
+                    }
                     if (collides(goal)){
                         Toast.makeText(this, "WRYYYYY!!", Toast.LENGTH_LONG).show();
                         stopTime = SystemClock.uptimeMillis();
                         totalTime = stopTime - startTime;
+
                         //startActivity(test);
                     }
                 }

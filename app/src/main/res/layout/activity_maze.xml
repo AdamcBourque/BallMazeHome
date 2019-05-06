@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Maze"
-    android:background = "@drawable/ic_launcher_background">
+    tools:context=".Maze">
+
 
     <FrameLayout
         android:layout_width="match_parent"
