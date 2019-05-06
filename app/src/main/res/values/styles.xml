@@ -19,12 +19,6 @@
     <!-- Peculiar Soda theme -->
     <style name="PeculiarSodaTheme" parent="Theme.AppCompat.Light.DarkActionBar">
 
-        <gradient
-            android:angle="270"
-            android:startColor="@color/sodaRed"
-            android:endColor="@color/sodaBlue"
-        />
-
         <item name="colorPrimary"> </item>
     </style>
 </resources>
