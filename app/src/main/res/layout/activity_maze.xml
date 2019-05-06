@@ -17,7 +17,8 @@
             android:id="@+id/ball"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:src="@drawable/ball_marble" />
+            android:src="@drawable/ball_marble"
+            />
 
         <ImageView
             android:id="@+id/goal"
