@@ -1,7 +1,6 @@
 package com.example.ballmazehome;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.hardware.Sensor;
@@ -9,7 +8,6 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.SystemClock;
-import android.support.constraint.solver.widgets.Rectangle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -17,11 +15,9 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileInputStream;
+
 
 
 public class Maze extends AppCompatActivity implements SensorEventListener {
@@ -36,10 +32,12 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
     private Rect ball, goal, walls[];
     private ImageView wall_images[];
     private FrameLayout maze;
+
+
    // Intent test = new Intent (this, high_score.class);
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maze);
         maze = findViewById(R.id.maze);
@@ -118,7 +116,7 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                 float yMax = deviceHeight - 320;
                 long curTime = System.currentTimeMillis();
 
-                if ((curTime - lastUpdate) > 0.00001) {
+                if ((curTime - lastUpdate) > 0) {
                     long diffTime = (curTime - lastUpdate);
                     lastUpdate = curTime;
 
@@ -151,7 +149,6 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                         Toast.makeText(this, "WRYYYYY!!", Toast.LENGTH_LONG).show();
                         stopTime = SystemClock.uptimeMillis();
                         totalTime = stopTime - startTime;
-
                         //startActivity(test);
                     }
                 }
