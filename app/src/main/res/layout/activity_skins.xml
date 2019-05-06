@@ -41,14 +41,14 @@
             android:layout_height="15dp"
             android:layout_marginLeft="33dp"
             android:text="@string/skin_default"
-            android:textSize="34px"
+            android:textSize="14dp"
             />
         <TextView
             android:layout_width="105dp"
             android:layout_height="15dp"
             android:layout_marginLeft="28dp"
             android:text="@string/skin_soda"
-            android:textSize="34px"
+            android:textSize="14dp"
             />
     </LinearLayout>
 
@@ -72,7 +72,7 @@
             android:layout_marginLeft="25dp" />
     </LinearLayout>
 
-    
+
     <!-- Text for skin buttons three and four -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -81,17 +81,16 @@
 
         <TextView
             android:layout_width="105dp"
-            android:layout_height="15dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="33dp"
             android:text="@string/skin_soda"
-            android:textSize="34px"
-            />
+            android:textSize="14dp" />
         <TextView
             android:layout_width="105dp"
             android:layout_height="15dp"
             android:layout_marginLeft="28dp"
             android:text="@string/skin_soda"
-            android:textSize="34px"
+            android:textSize="14dp"
             />
     </LinearLayout>
 
