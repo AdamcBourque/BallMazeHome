@@ -117,11 +117,10 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                 long curTime = System.currentTimeMillis();
 
                 if ((curTime - lastUpdate) > 0) {
-                    long diffTime = (curTime - lastUpdate);
                     lastUpdate = curTime;
 
-                    float speedX = x / Math.abs(diffTime) * 1000; // divided by 10
-                    float speedY = y / Math.abs(diffTime) * 1000;
+                    float speedX = 2 * x ; // divided by 10
+                    float speedY = 2 * y ;
 
                     if (ballX < 0 ){
                         ballX = 20;
