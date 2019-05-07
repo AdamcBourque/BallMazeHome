@@ -41,7 +41,7 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maze);
         maze = findViewById(R.id.maze);
-        num_walls = 8;
+        num_walls = 10;
         sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         ball_image = findViewById(R.id.ball);
@@ -73,6 +73,8 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
         walls[5].set(0, 840, 190, 880);
         walls[6].set(360, 840, 400, deviceHeight / 10);
         walls[7].set(150, 150, deviceWidth / 5 - 200, 190);
+        walls[8].set(deviceWidth / 5, 0, deviceWidth / 5 + 40, deviceHeight / 10);
+        walls[9].set(0, deviceHeight / 11 - 30, deviceWidth / 5 , deviceHeight / 11 + 10);
 
         wall_images = new ImageView[num_walls];
 
@@ -124,15 +126,11 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
 
                     if (ballX < 0 ){
                         ballX = 20;
-                    }else if (ballX > xMax) {
-                        ballX = xMax - 20;
-                    }else{
+                    } else{
                         ballX = ballX - speedX;
                     }
                     if (ballY < 0 ){
                         ballY = 20;
-                    }else if (ballY > yMax) {
-                        ballY = yMax - 20;
                     }else{
                         ballY = ballY + speedY;
                     }
@@ -140,9 +138,10 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                     ball_image.setY(ballY);
                     ball.offsetTo((int)ballX, (int)ballY);
                     if (collides(walls[0]) || collides(walls[1]) || collides(walls[2]) || collides(walls[3]) || collides(walls[4]) || collides(walls[5])
-                            || collides(walls[6]) || collides(walls[7])){
-                        ballX = ballX + speedX;
-                        ballY = ballY - speedY;
+                            || collides(walls[6]) || collides(walls[7]) || collides(walls[8]) || collides(walls[9])){
+                        //float temp =  (float)(Math.sin(90 - Math.asin((speedY / Math.sqrt((speedY * speedY + speedX * speedX))))) * (speedY * speedY + speedX * speedX));
+                        ballY = ballY - 4 * speedY;
+                        ballX = ballX + 4 * speedX;
                     }
                     if (collides(goal)){
                         Toast.makeText(this, "WRYYYYY!!", Toast.LENGTH_LONG).show();
