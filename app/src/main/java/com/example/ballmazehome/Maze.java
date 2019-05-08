@@ -90,7 +90,7 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
            wall_images[i].setVisibility(View.VISIBLE);
         }
 
-        goal.set((int)(xMax - 80), (int)(yMax - 80), (int)xMax, (int)yMax);
+        goal.set((int)(xMax - 40), (int)(yMax - 40), (int)xMax, (int)yMax);
         ball.set((int)ballX, (int)ballY, (int)(ballX+80), (int)(ballY+80));
         goal_image.setX(xMax - 80);
         goal_image.setY(yMax - 80);
