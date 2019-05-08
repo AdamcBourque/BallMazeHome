@@ -1,6 +1,7 @@
 package com.example.ballmazehome;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.hardware.Sensor;
@@ -34,7 +35,7 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
     private FrameLayout maze;
 
 
-   // Intent test = new Intent (this, high_score.class);
+   Intent test = new Intent (this, Win_screen.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
@@ -114,8 +115,6 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                 windowmanager.getDefaultDisplay().getMetrics(displayMetrics);
                 int deviceWidth = displayMetrics.widthPixels;
                 int deviceHeight = displayMetrics.heightPixels;
-                float xMax = deviceWidth - 160;
-                float yMax = deviceHeight - 320;
                 long curTime = System.currentTimeMillis();
 
                 if ((curTime - lastUpdate) > 0) {
@@ -147,7 +146,9 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                         Toast.makeText(this, "WRYYYYY!!", Toast.LENGTH_LONG).show();
                         stopTime = SystemClock.uptimeMillis();
                         totalTime = stopTime - startTime;
+                        test.putExtra("check", 1);
                         //startActivity(test);
+                        finish();
                     }
                 }
             }

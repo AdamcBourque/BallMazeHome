@@ -16,17 +16,21 @@ public class difficulty_selector extends AppCompatActivity {
     }
     public void button_click(View view){
         Intent maze = new Intent (this, Maze.class);
+        Intent cancer = new Intent (this, Win_screen.class);
         switch (view.getId()){
             case R.id.pleb:
                 diffi = 0;
+                startActivity(cancer);
                 startActivity(maze);
                 break;
             case R.id.norm:
                 diffi = 1;
+                startActivity(cancer);
                 startActivity(maze);
                 break;
             case R.id.hard:
                 diffi = 2 + diffi;
+                startActivity(cancer);
                 startActivity(maze);
                 break;
             default:
