@@ -8,6 +8,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
+
 
 
 
@@ -34,6 +36,14 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
     private Rect ball, goal, walls[];
     private ImageView wall_images[];
     private FrameLayout maze;
+    Shared_data test = new Shared_data();
+    Handler handler = new Handler();
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            handler.postDelayed(this, 0);
+        }
+    };
 
 
     @Override
@@ -46,7 +56,8 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
         ball_image = findViewById(R.id.ball);
         goal_image = findViewById(R.id.goal);
         currentSensor = Sensor.TYPE_ACCELEROMETER;
-        startTime = SystemClock.uptimeMillis();
+        startTime = SystemClock.elapsedRealtime();
+
         // ballX = ball.getX();
       //  ballY = ball.getY();
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -59,6 +70,7 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
         goal = new Rect();
         ball = new Rect();
         difficulty = getIntent().getIntExtra("check", 0);
+        test.setDiffi(difficulty);
         switch (difficulty){
             case 0:
                 num_walls = 10;
@@ -217,8 +229,21 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                     }
                     if (collides(goal)){
                         Toast.makeText(this, "WRYYYYY!!", Toast.LENGTH_LONG).show();
-                        stopTime = SystemClock.uptimeMillis();
+                        stopTime = SystemClock.elapsedRealtime();
                         totalTime = stopTime - startTime;
+                        switch (difficulty){
+                            case 0:
+                                test.setTime_easy(totalTime);
+                                break;
+                            case 1:
+                                test.setTime_normal(totalTime);
+                                break;
+                            case 2:
+                                test.setTime_hard(totalTime);
+                                break;
+                                default:
+                                    break;
+                        }
                         finish();
                     }
                 }

@@ -11,13 +11,38 @@ import android.widget.VideoView;
 
 public class Win_screen extends AppCompatActivity {
 
-    private int num;
+    Shared_data data = new Shared_data();
     MediaController media;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_win_screen);
+        long time_string;
+        switch (data.getDiffi()){
+            case 0:
+                time_string = data.getTime_easy();
+                break;
+            case 1:
+                time_string = data.getTime_normal();
+                break;
+            case 2:
+                time_string = data.getTime_hard();
+                break;
+            default:
+                time_string = 0;
+                break;
+        }
+
+        TextView time = findViewById(R.id.time);
+        long t_secs = (int)(time_string/1000);
+        long secs = t_secs % 60;
+        long mins = t_secs / 60;
+        String seconds = Long.toString(secs);
+        String minutes = Long.toString(mins);
+        String output = minutes + ":" + seconds;
+        time.setText(output);
+
         VideoView rick = findViewById(R.id.rick);
         media =  new MediaController(this);
         String path = "android.resource://" + getPackageName() + "bruh_video.mp4";
@@ -26,13 +51,8 @@ public class Win_screen extends AppCompatActivity {
         media.setAnchorView(rick);
         rick.setVideoURI(uri);
         rick.start();
-
-        String time_string = getIntent().getStringExtra("check");
-        TextView time = findViewById(R.id.time);
-        time.setText(time_string);
-
-
     }
+
     public void button_click(View view){
         Intent high_score = new Intent (this, high_score.class);
         startActivity(high_score);
