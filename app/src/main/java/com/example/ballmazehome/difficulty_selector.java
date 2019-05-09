@@ -20,16 +20,22 @@ public class difficulty_selector extends AppCompatActivity {
         switch (view.getId()){
             case R.id.pleb:
                 diffi = 0;
+                maze = new Intent(getBaseContext(), Maze.class);
+                maze.putExtra("check", diffi);
                 startActivity(cancer);
                 startActivity(maze);
                 break;
             case R.id.norm:
                 diffi = 1;
+                maze = new Intent(getBaseContext(), Maze.class);
+                maze.putExtra("check", diffi);
                 startActivity(cancer);
                 startActivity(maze);
                 break;
             case R.id.hard:
-                diffi = 2 + diffi;
+                diffi = 2;
+                maze = new Intent(getBaseContext(), Maze.class);
+                maze.putExtra("check", diffi);
                 startActivity(cancer);
                 startActivity(maze);
                 break;
