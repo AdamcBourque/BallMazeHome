@@ -11,41 +11,29 @@ import android.widget.VideoView;
 
 public class Win_screen extends AppCompatActivity {
 
-    Shared_data data = new Shared_data();
+
     MediaController media;
+    long times = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_win_screen);
-        long time_string;
-        switch (data.getDiffi()){
-            case 0:
-                time_string = data.getTime_easy();
-                break;
-            case 1:
-                time_string = data.getTime_normal();
-                break;
-            case 2:
-                time_string = data.getTime_hard();
-                break;
-            default:
-                time_string = 0;
-                break;
-        }
 
-        TextView time = findViewById(R.id.time);
-        long t_secs = (int)(time_string/1000);
-        long secs = t_secs % 60;
-        long mins = t_secs / 60;
+        times = Maze.getActivityInstance().getData();
+        TextView time2 = findViewById(R.id.time);
+        long time = (int)(times/1000);
+        long secs = time % 60;
+        long mins = time / 60;
         String seconds = Long.toString(secs);
         String minutes = Long.toString(mins);
         String output = minutes + ":" + seconds;
-        time.setText(output);
+        time2.setText(output);
 
         VideoView rick = findViewById(R.id.rick);
         media =  new MediaController(this);
-        String path = "android.resource://" + getPackageName() + "bruh_video.mp4";
+        String path = "android.resource://" + getPackageName() + "/" + R.raw.rick;
+
         Uri uri = Uri.parse(path);
         rick.setMediaController(media);
         media.setAnchorView(rick);

@@ -11,10 +11,15 @@ import java.nio.file.OpenOption;
 
 public class MainActivity extends AppCompatActivity {
 
+    static MainActivity INSTANCE;
+    private int skin;
+    private long teasy, tnormal, thard;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        INSTANCE = this;
     }
 
     public void button_click(View view){
@@ -38,5 +43,20 @@ public class MainActivity extends AppCompatActivity {
             default:
                 break;
         }
+    }
+    public static MainActivity getActivityInstance() {
+        return INSTANCE;
+    }
+    public long getTeasy() {
+        return this.teasy;
+    }
+    public long getTnormal(){
+        return this.tnormal;
+    }
+    public long getThard(){
+        return this.thard;
+    }
+    public int getDifficulty(){
+        return this.skin;
     }
 }
