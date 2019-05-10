@@ -3,7 +3,7 @@ package com.example.ballmazehome;
 public class Shared_data {
 
     private long time_easy, time_normal, time_hard;
-    private int stars, skin, diffi;
+    private int stars, skin;
 
     public Shared_data(){
 
@@ -14,9 +14,6 @@ public class Shared_data {
     public int getSkin(){
         return skin;
     }
-    public int getDiffi(){
-        return diffi;
-    }
     public long getTime_easy(){
         return time_easy;
     }
@@ -25,9 +22,6 @@ public class Shared_data {
     }
     public long getTime_hard(){
         return time_hard;
-    }
-    public void setDiffi(int dif){
-        diffi = dif;
     }
     public void setTime_easy(long time){
         time_easy = time;
@@ -48,7 +42,12 @@ public class Shared_data {
         long t_secs = (int)(time/1000);
         long secs = t_secs % 60;
         long mins = t_secs / 60;
-        String seconds = Long.toString(secs);
+        String seconds;
+        if (secs < 10){
+            seconds = "0" + Long.toString(secs);
+        }else {
+            seconds = Long.toString(secs);
+        }
         String minutes = Long.toString(mins);
         String output = minutes + ":" + seconds;
         return output;

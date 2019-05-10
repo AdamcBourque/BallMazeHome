@@ -1,14 +1,12 @@
 package com.example.ballmazehome;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,7 +15,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.Toast;
 
 
@@ -37,6 +34,7 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
     private Rect ball, goal, walls[];
     private ImageView wall_images[];
     private FrameLayout maze;
+    Shared_data data = MainActivity.getActivityInstance().getData();
 
 
 
@@ -183,8 +181,6 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                 DisplayMetrics displayMetrics = new DisplayMetrics();
                 WindowManager windowmanager = (WindowManager) getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
                 windowmanager.getDefaultDisplay().getMetrics(displayMetrics);
-                int deviceWidth = displayMetrics.widthPixels;
-                int deviceHeight = displayMetrics.heightPixels;
                 long curTime = System.currentTimeMillis();
 
                 if ((curTime - lastUpdate) > 0) {
@@ -209,14 +205,12 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                     if (difficulty == 0){
                         if (collides(walls[0]) || collides(walls[1]) || collides(walls[2]) || collides(walls[3]) || collides(walls[4]) || collides(walls[5])
                                 || collides(walls[6]) || collides(walls[7]) || collides(walls[8]) || collides(walls[9])) {
-                            //float temp =  (float)(Math.sin(90 - Math.asin((speedY / Math.sqrt((speedY * speedY + speedX * speedX))))) * (speedY * speedY + speedX * speedX));
                             ballY = ballY - 2 * speedY;
                             ballX = ballX + 2 * speedX;
                         }
                     }else {
                         if (collides(walls[0]) || collides(walls[1]) || collides(walls[2]) || collides(walls[3]) || collides(walls[4]) || collides(walls[5])
                                 || collides(walls[6]) || collides(walls[7]) || collides(walls[8]) || collides(walls[9]) || collides(walls[10])) {
-                            //float temp =  (float)(Math.sin(90 - Math.asin((speedY / Math.sqrt((speedY * speedY + speedX * speedX))))) * (speedY * speedY + speedX * speedX));
                             ballY = ballY - 2 * speedY;
                             ballX = ballX + 2 * speedX;
                         }
@@ -225,22 +219,15 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
 
                         stopTime = SystemClock.elapsedRealtime();
                         totalTime = stopTime - startTime;
-                        long time = (int)(totalTime/1000);
-                        long secs = time % 60;
-                        long mins = time / 60;
-                        String seconds = Long.toString(secs);
-                        String minutes = Long.toString(mins);
-                        String output = minutes + ":" + seconds;
+                        String output = data.toString(totalTime);
                         Toast.makeText(this, output, Toast.LENGTH_LONG).show();
+                        data.setStars(data.getStars() + difficulty + 1);
                         switch (difficulty){
                             case 0:
-
                                 break;
                             case 1:
-
                                 break;
                             case 2:
-
                                 break;
                                 default:
                                     break;

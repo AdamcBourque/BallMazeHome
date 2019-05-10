@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class difficulty_selector extends AppCompatActivity {
 
     private int diffi = 0;
+    Shared_data data = MainActivity.getActivityInstance().getData();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +17,7 @@ public class difficulty_selector extends AppCompatActivity {
         setContentView(R.layout.activity_difficulty_selector);
     }
     public void button_click(View view){
-        Intent maze = new Intent (this, Maze.class);
+        Intent maze;
         Intent cancer = new Intent (this, Win_screen.class);
         switch (view.getId()){
             case R.id.pleb:
