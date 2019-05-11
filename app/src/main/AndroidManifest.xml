@@ -16,49 +16,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Main2Activity"
+            android:screenOrientation="portrait">
+        </activity>
         <activity
             android:name=".Win_screen"
+            android:parentActivityName=".difficulty_selector"
             android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".difficulty_selector" />
         </activity>
         <activity
             android:name=".info"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Main2Activity">
         </activity>
         <activity
             android:name=".skins"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Main2Activity">
         </activity>
         <activity
             android:name=".difficulty_selector"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".Main2Activity"
             android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".high_score"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".Main2Activity"
             android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -66,9 +56,6 @@
             android:name=".Maze"
             android:parentActivityName=".difficulty_selector"
             android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
         </activity>
     </application>
 

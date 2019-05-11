@@ -20,6 +20,8 @@ public class high_score extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_score);
+        TextView stars = findViewById(R.id.star_count);
+        stars.setText("" + data.getStars());
         easy = findViewById(R.id.hi);
         normal = findViewById(R.id.hi2);
         hard = findViewById(R.id.hi3);
@@ -52,7 +54,7 @@ public class high_score extends AppCompatActivity {
 
         switch (difficulty){
             case 0:
-                if (times < teasy){
+                if (times <= teasy){
                     data.setTime_easy(times);
                     easy.setText(output);
                     normal.setText(pr[1]);
@@ -64,7 +66,7 @@ public class high_score extends AppCompatActivity {
                 }
                 break;
             case 1:
-                if (times < tnormal){
+                if (times <= tnormal){
                     data.setTime_normal(times);
                     normal.setText(output);
                     hard.setText(pr[2]);
@@ -76,7 +78,7 @@ public class high_score extends AppCompatActivity {
                 }
                 break;
             case 2:
-                if (times < thard){
+                if (times <= thard){
                     data.setTime_hard(times);
                     hard.setText(output);
                     normal.setText(pr[1]);

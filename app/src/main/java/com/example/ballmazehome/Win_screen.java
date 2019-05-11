@@ -21,6 +21,8 @@ public class Win_screen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_win_screen);
+        TextView stars = findViewById(R.id.star_count);
+        stars.setText("" + data.getStars());
 
         times = Maze.getActivityInstance().getData();
         TextView time2 = findViewById(R.id.time);

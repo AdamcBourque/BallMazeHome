@@ -13,5 +13,7 @@ public class skins extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skins);
+        TextView stars = findViewById(R.id.star_count);
+        stars.setText("" + data.getStars());
     }
 }

@@ -15,6 +15,8 @@ public class difficulty_selector extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_difficulty_selector);
+        TextView stars = findViewById(R.id.star_count);
+        stars.setText("" + data.getStars());
     }
     public void button_click(View view){
         Intent maze;
