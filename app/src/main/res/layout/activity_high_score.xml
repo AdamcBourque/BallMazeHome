@@ -4,19 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".high_score"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/linear_layout_hscore">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/linear_layout2_hscore">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title"
             android:textSize="@android:dimen/notification_large_icon_height"
-            android:padding="20dp"/>
+            android:padding="20dp"
+            android:id="@+id/Stars_hscore"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -32,14 +35,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:id="@+id/plebian_layout">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Plebian:"
             android:textSize="36dp"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:id="@+id/plebian_hscore"/>
 
         <TextView
             android:id="@+id/hi"
@@ -54,14 +59,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:id="@+id/normie_layout">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Normie: "
             android:textSize="36dp"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:id="@+id/normie_hscore"/>
 
         <TextView
             android:id="@+id/hi2"
@@ -76,14 +83,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:id="@+id/hard_UwU_layout">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hard UwU: "
             android:textSize="36dp"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:id="@+id/hard_UwU_hscore"/>
 
         <TextView
             android:id="@+id/hi3"

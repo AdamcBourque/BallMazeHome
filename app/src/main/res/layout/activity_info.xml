@@ -9,7 +9,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".info"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/linear_layout_info">
 
     <TextView
         android:lines="183"
@@ -79,7 +80,8 @@ If the user has no stars, and it is not a fresh download or reset of progress, t
 Any problems you may be experiencing that is not listed above? Go to the options in the main menu and use the email at the bottom of the screen to contact us at MazeBalls2019@gmail.com.\n
     "
 
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        android:id="@+id/the_really_long_text"/>
 
 
 
