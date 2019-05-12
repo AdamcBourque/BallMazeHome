@@ -23,9 +23,14 @@
     <!-- "peculiar soda" skin colors -->
     <color name="skinSoda_buttons">#eb1933</color>
     <color name="skinSoda_btn_text">#FFFFFF</color>
-    <color name="skinSoda_background">#2151a1</color>
+    <color name="skinSoda_background">#3B63A5</color>
     <color name="skinSoda_main_text">#FFFFFF</color>
-    <color name="skinSoda_maze_walls">#eb1933</color>
+    <color name="skinSoda_maze_walls">#EC2E46</color>
+    <!--
+    <color name="skinSoda_Red">#eb1933</color>
+    <color name="skinSoda_white">#FFFFFF</color>
+    <color name="skinSoda_blue">#2151a1</color>
+    -->
 
 
     <color name="skin2_buttons">#008577</color>
