@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
         INSTANCE = this;
         TextView stars = findViewById(R.id.star_count);
         stars.setText("" + data.getStars());
-
+        Intent boop = new Intent (this, Main2Activity.class);
+        startActivity(boop);
     }
 
     public void button_click(View view){

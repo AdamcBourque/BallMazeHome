@@ -21,28 +21,43 @@
         </activity>
         <activity
             android:name=".Win_screen"
-            android:parentActivityName=".difficulty_selector"
+            android:parentActivityName="com.example.ballmazehome.difficulty_selector"
             android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.ballmazehome.difficulty_selector" />
         </activity>
         <activity
             android:name=".info"
             android:screenOrientation="portrait"
-            android:parentActivityName=".Main2Activity">
+            android:parentActivityName="com.example.ballmazehome.Main2Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.ballmazehome.Main2Activity" />
         </activity>
         <activity
             android:name=".skins"
             android:screenOrientation="portrait"
-            android:parentActivityName=".Main2Activity">
+            android:parentActivityName="com.example.ballmazehome.Main2Activity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.ballmazehome.Main2Activity" />
         </activity>
         <activity
             android:name=".difficulty_selector"
-            android:parentActivityName=".Main2Activity"
+            android:parentActivityName="com.example.ballmazehome.Main2Activity"
             android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.ballmazehome.Main2Activity" />
         </activity>
         <activity
             android:name=".high_score"
-            android:parentActivityName=".Main2Activity"
+            android:parentActivityName="com.example.ballmazehome.Main2Activity"
             android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.ballmazehome.Main2Activity" />
         </activity>
         <activity
             android:name=".MainActivity"
@@ -54,8 +69,12 @@
         </activity>
         <activity
             android:name=".Maze"
-            android:parentActivityName=".difficulty_selector"
+            android:parentActivityName="com.example.ballmazehome.difficulty_selector"
             android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.ballmazehome.difficulty_selector" />
+
         </activity>
     </application>
 
