@@ -5,10 +5,12 @@
     <color name="colorPrimaryDark">#00495F</color>
     <color name="colorAccent">#CECACA</color>
 
-    <!-- "peculiar soda" skin colors -->
-    <color name="sodaRed">#eb1933</color>
-    <color name="sodaWhite">#FFFFFF</color>
-    <color name="sodaBlue">#2151a1</color>
+    <color name="skin0_buttons">#00495F</color>
+    <color name="skin0_btn_text">#CECACA</color>
+    <color name="skin0_background">#FFFFFF</color>
+    <color name="skin0_main_text">#CECACA</color>
+    <color name="skin0_maze_walls">#000000</color>
+    <color name="skin0_ball">#919191</color>
 
 
     <color name="skin1_buttons">#008577</color>
@@ -17,4 +19,20 @@
     <color name="skin1_main_text">#008577</color>
     <color name="skin1_maze_walls">#00574B</color>
     <color name="skin1_ball">#919191</color>
+
+    <!-- "peculiar soda" skin colors -->
+    <color name="skinSoda_buttons">#eb1933</color>
+    <color name="skinSoda_btn_text">#FFFFFF</color>
+    <color name="skinSoda_background">#2151a1</color>
+    <color name="skinSoda_main_text">#FFFFFF</color>
+    <color name="skinSoda_maze_walls">#eb1933</color>
+
+
+    <color name="skin2_buttons">#008577</color>
+    <color name="skin2_btn_text">#00574B</color>
+    <color name="skin2_background">#D81B60</color>
+    <color name="skin2_main_text">#008577</color>
+    <color name="skin2_maze_walls">#00574B</color>
+    <color name="skin2_ball">#919191</color>
+
 </resources>
