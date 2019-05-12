@@ -4,19 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/linear_layout_home">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/linear_layout2_home">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title"
             android:textSize="@android:dimen/notification_large_icon_height"
-            android:padding="20dp"/>
+            android:padding="20dp"
+            android:id="@+id/Stars_home"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -45,7 +48,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:id="@+id/text_view_home"/>
 
     <Button
         android:id="@+id/high_scores"
@@ -62,7 +66,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:id="@+id/text_view2_home"/>
 
     <Button
         android:id="@+id/skins"
@@ -79,7 +84,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:id="@+id/text_view3_home"/>
 
     <Button
         android:id="@+id/info"
@@ -98,7 +104,8 @@
         android:layout_weight="1"
         android:text="
         Contact: MazeBalls2019@gmail.com"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        android:id="@+id/email_home"/>
 
 
 

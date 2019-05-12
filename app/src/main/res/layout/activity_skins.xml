@@ -4,13 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".skins"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/linear_layout_skins">
 
     <!-- Star counter -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/linear_layout2_skin">
 
         <TextView
             android:layout_width="wrap_content"
@@ -18,6 +20,7 @@
             android:padding="15dp"
             android:text="@string/title"
             android:textSize="@android:dimen/notification_large_icon_height"
+            android:id="@+id/Stars_skins"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -34,7 +37,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/linear_layout3_skin">
 
         <TextView
             android:layout_width="105dp"
@@ -42,6 +46,7 @@
             android:layout_marginLeft="33dp"
             android:text="@string/skin_default"
             android:textSize="14dp"
+            android:id="@+id/skin_name"
             />
         <TextView
             android:layout_width="105dp"
@@ -49,6 +54,7 @@
             android:layout_marginLeft="28dp"
             android:text="@string/skin_soda"
             android:textSize="14dp"
+            android:id="@+id/skin_name2"
             />
     </LinearLayout>
 
@@ -57,7 +63,8 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_weight="0.03"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/linear_layout4_skins">
 
         <Button
             android:id="@+id/skin_default"
@@ -77,20 +84,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/linear_layout5_skins">
 
         <TextView
             android:layout_width="105dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="33dp"
             android:text="@string/skin_soda"
-            android:textSize="14dp" />
+            android:textSize="14dp"
+            android:id="@+id/skin_name3"/>
         <TextView
             android:layout_width="105dp"
             android:layout_height="15dp"
             android:layout_marginLeft="28dp"
             android:text="@string/skin_soda"
             android:textSize="14dp"
+            android:id="@+id/skin_name4"
             />
     </LinearLayout>
 
@@ -100,7 +110,8 @@
         android:layout_height="1px"
         android:layout_marginTop="10dp"
         android:layout_weight="0.03"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/linear_layout6_skins">
 
         <Button
             android:id="@+id/skin_three"
