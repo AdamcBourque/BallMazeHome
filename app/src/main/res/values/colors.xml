@@ -33,11 +33,10 @@
     -->
 
 
-    <color name="skin2_buttons">#008577</color>
-    <color name="skin2_btn_text">#00574B</color>
-    <color name="skin2_background">#D81B60</color>
-    <color name="skin2_main_text">#008577</color>
-    <color name="skin2_maze_walls">#00574B</color>
-    <color name="skin2_ball">#919191</color>
+    <color name="skinSummer_buttons">#FF971E</color>
+    <color name="skinSummer_btn_text">#FFFFFF</color>
+    <color name="skinSummer_background">#66FC3C</color>
+    <color name="skinSummer_main_text">#FFFFFF</color>
+    <color name="skinSummer_maze_walls">#55FFD7</color>
 
 </resources>
