@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
@@ -15,6 +17,10 @@ public class Win_screen extends AppCompatActivity {
     MediaController media;
     long times;
     Shared_data data = MainActivity.getActivityInstance().getData();
+    Skin_shift skinner = new Skin_shift();
+    TextView star, a,s,time2;
+    Button q;
+    LinearLayout main;
 
 
     @Override
@@ -23,11 +29,26 @@ public class Win_screen extends AppCompatActivity {
         setContentView(R.layout.activity_win_screen);
         TextView stars = findViewById(R.id.star_count);
         stars.setText("" + data.getStars());
+        a = findViewById(R.id.grats);
+        s = findViewById(R.id.time_text);
+        time2 = findViewById(R.id.time);
+        star = findViewById(R.id.Stars_win);
+        main = findViewById(R.id.linear_layout_win);
+        q = findViewById(R.id.back_to_score_button);
+        skinner.skinTextView(data.getSkin(), a, this);
+        skinner.skinTextView(data.getSkin(), s, this);
+        skinner.skinTextView(data.getSkin(), star, this);
+        skinner.skinTextView(data.getSkin(), time2, this);
+        skinner.skinButton(data.getSkin(), q, this);
+        skinner.skinTextView(data.getSkin(), stars, this);
+        skinner.skinLayout(data.getSkin(), main, this);
 
         times = Maze.getActivityInstance().getData();
-        TextView time2 = findViewById(R.id.time);
         String output = data.toString(times);
         time2.setText(output);
+        if (times/1000 > 120){
+            a.setText("You disappoint me");
+        }
 
         VideoView rick = findViewById(R.id.rick);
         media =  new MediaController(this);

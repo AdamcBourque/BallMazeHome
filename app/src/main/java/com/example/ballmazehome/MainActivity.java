@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         stars.setText("" + data.getStars());
         Intent boop = new Intent (this, Main2Activity.class);
         startActivity(boop);
+        data.setStars(0);
     }
 
     public void button_click(View view){

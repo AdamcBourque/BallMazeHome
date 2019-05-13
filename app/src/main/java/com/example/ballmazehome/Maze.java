@@ -1,7 +1,6 @@
 package com.example.ballmazehome;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Rect;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -35,7 +34,7 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
     private ImageView wall_images[];
     private FrameLayout maze;
     Shared_data data = MainActivity.getActivityInstance().getData();
-
+    Skin_shift skinner = new Skin_shift();
 
 
     @Override
@@ -46,7 +45,28 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
         sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         ball_image = findViewById(R.id.ball);
+        switch (data.getSkin()) {
+            case 0:
+                ball_image.setImageDrawable(getResources().getDrawable(R.drawable.ball_marble));
+                maze.setBackgroundColor(getResources().getColor(R.color.skin0_background));
+                break;
+            case 1:
+                ball_image.setImageDrawable(getResources().getDrawable(R.drawable.ball_peculiar_soda));
+                maze.setBackgroundColor(getResources().getColor(R.color.skinSoda_background));
+                break;
+            case 2:
+                ball_image.setImageDrawable(getResources().getDrawable(R.drawable.ball_sunset));
+                maze.setBackgroundColor(getResources().getColor(R.color.skinSunset_background));
+                break;
+            case 3:
+                ball_image.setImageDrawable(getResources().getDrawable(R.drawable.ball_summer));
+                maze.setBackgroundColor(getResources().getColor(R.color.skinSummer_background));
+                break;
+            default:
+                break;
+        }
         goal_image = findViewById(R.id.goal);
+        goal_image.setImageDrawable(getResources().getDrawable(R.drawable.jeremyshead));
         currentSensor = Sensor.TYPE_ACCELEROMETER;
         startTime = SystemClock.elapsedRealtime();
         INSTANCE=this;
@@ -92,7 +112,7 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                     wall_images[i].setY(walls[i].top);
                     wall_images[i].getLayoutParams().height = walls[i].bottom - walls[i].top;
                     wall_images[i].getLayoutParams().width = walls[i].right - walls[i].left;
-                    wall_images[i].setBackgroundColor(Color.BLACK);
+                    wall_images[i].setBackgroundColor(skinner.getWallColor(data.getSkin(), this));
                     wall_images[i].setVisibility(View.VISIBLE);
                 }
                 break;
@@ -126,7 +146,7 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                     wall_images[i].setY(walls[i].top);
                     wall_images[i].getLayoutParams().height = walls[i].bottom - walls[i].top;
                     wall_images[i].getLayoutParams().width = walls[i].right - walls[i].left;
-                    wall_images[i].setBackgroundColor(Color.BLACK);
+                    wall_images[i].setBackgroundColor(skinner.getWallColor(data.getSkin(),this));
                     wall_images[i].setVisibility(View.VISIBLE);
                 }
                 break;
@@ -185,6 +205,11 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
 
                 if ((curTime - lastUpdate) > 0) {
                     lastUpdate = curTime;
+                    stopTime = SystemClock.elapsedRealtime();
+                    totalTime = stopTime - startTime;
+                    if (totalTime/1000 > 120){
+                        finish();
+                    }
 
                     float speedX = 2 * x ; // divided by 10
                     float speedY = 2 * y ;
@@ -217,20 +242,14 @@ public class Maze extends AppCompatActivity implements SensorEventListener {
                     }
                     if (collides(goal)){
 
-                        stopTime = SystemClock.elapsedRealtime();
-                        totalTime = stopTime - startTime;
+
                         String output = data.toString(totalTime);
-                        Toast.makeText(this, output, Toast.LENGTH_LONG).show();
                         data.setStars(data.getStars() + difficulty + 1);
                         switch (difficulty){
-                            case 0:
-                                break;
-                            case 1:
-                                break;
-                            case 2:
-                                break;
-                                default:
-                                    break;
+                            case 0: break;
+                            case 1: break;
+                            case 2: break;
+                            default: break;
                         }
                         finish();
                     }

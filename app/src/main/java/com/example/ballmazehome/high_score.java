@@ -2,6 +2,8 @@ package com.example.ballmazehome;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +15,9 @@ public class high_score extends AppCompatActivity {
     String output;
     String pr[] = new String[3];
     TextView easy, normal, hard;
+    Skin_shift skinner = new Skin_shift();
+    TextView star, a,s,d;
+    LinearLayout main;
 
 
     @Override
@@ -30,6 +35,21 @@ public class high_score extends AppCompatActivity {
         tnormal = data.getTime_normal();
         thard = data.getTime_hard();
         output = data.toString(times);
+        a = findViewById(R.id.plebian_hscore);
+        s = findViewById(R.id.normie_hscore);
+        d = findViewById(R.id.hard_UwU_hscore);
+        star = findViewById(R.id.Stars_hscore);
+        main = findViewById(R.id.linear_layout_hscore);
+
+        skinner.skinTextView(data.getSkin(), a, this);
+        skinner.skinTextView(data.getSkin(), s, this);
+        skinner.skinTextView(data.getSkin(), star, this);
+        skinner.skinTextView(data.getSkin(), d, this);
+        skinner.skinTextView(data.getSkin(), stars, this);
+        skinner.skinTextView(data.getSkin(), easy, this);
+        skinner.skinTextView(data.getSkin(), normal, this);
+        skinner.skinTextView(data.getSkin(), hard, this);
+        skinner.skinLayout(data.getSkin(), main, this);
 
 
         difficulty = Maze.getActivityInstance().getDifficulty();
@@ -48,9 +68,6 @@ public class high_score extends AppCompatActivity {
         pr[1] = data.toString(tnormal);
         pr[2] = data.toString(thard);
 
-        Toast.makeText(this, data.toString(data.getTime_easy()), Toast.LENGTH_LONG).show();
-        //Toast.makeText(this, data.toString(data.getTime_normal()), Toast.LENGTH_LONG).show();
-        //Toast.makeText(this, data.toString(data.getTime_hard()), Toast.LENGTH_LONG).show();
 
         switch (difficulty){
             case 0:

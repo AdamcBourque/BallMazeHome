@@ -70,13 +70,15 @@
             android:id="@+id/skin_default"
             android:layout_width="105dp"
             android:layout_height="105dp"
-            android:layout_marginLeft="25dp" />
+            android:layout_marginLeft="25dp"
+            android:onClick="onClick"/>
 
         <Button
             android:id="@+id/skin_peculiar_soda"
             android:layout_width="105dp"
             android:layout_height="105dp"
-            android:layout_marginLeft="25dp" />
+            android:layout_marginLeft="25dp"
+            android:onClick="onClick"/>
     </LinearLayout>
 
 
@@ -118,6 +120,7 @@
             android:layout_width="105dp"
             android:layout_height="105dp"
             android:layout_marginLeft="25dp"
+            android:onClick="onClick"
             />
 
         <Button
@@ -125,6 +128,7 @@
             android:layout_width="105dp"
             android:layout_height="105dp"
             android:layout_marginLeft="25dp"
+            android:onClick="onClick"
             />
     </LinearLayout>
 
