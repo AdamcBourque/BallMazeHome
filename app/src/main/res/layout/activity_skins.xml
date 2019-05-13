@@ -98,7 +98,7 @@
             android:layout_width="105dp"
             android:layout_height="15dp"
             android:layout_marginLeft="28dp"
-            android:text="@string/skin_soda"
+            android:text="@string/skin_sunset"
             android:textSize="14dp"
             android:id="@+id/skin_name4"
             />

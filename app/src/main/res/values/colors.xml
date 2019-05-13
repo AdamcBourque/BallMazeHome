@@ -32,12 +32,18 @@
     <color name="skinSoda_blue">#2151a1</color>
     -->
 
-
     <!-- "Summer" skin colors -->
     <color name="skinSummer_buttons">#FF971E</color>
     <color name="skinSummer_btn_text">#FFFFFF</color>
     <color name="skinSummer_background">#66FC3C</color>
     <color name="skinSummer_main_text">#FFFFFF</color>
     <color name="skinSummer_maze_walls">#55FFD7</color>
+
+    <!-- "Sunset" skin color -->
+    <color name="skin_buttons">#BB6F30</color>
+    <color name="skin_btn_text">#D8BED5</color>
+    <color name="skin_background">#B173A6</color>
+    <color name="skin_main_text">#D8BED5</color>
+    <color name="skin_maze_walls">#C96515</color>
 
 </resources>
