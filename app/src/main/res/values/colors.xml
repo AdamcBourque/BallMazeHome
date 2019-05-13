@@ -33,6 +33,7 @@
     -->
 
 
+    <!-- "Summer" skin colors-->
     <color name="skinSummer_buttons">#FF971E</color>
     <color name="skinSummer_btn_text">#FFFFFF</color>
     <color name="skinSummer_background">#66FC3C</color>
