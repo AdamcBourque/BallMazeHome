@@ -40,10 +40,10 @@
     <color name="skinSummer_maze_walls">#55FFD7</color>
 
     <!-- "Sunset" skin color -->
-    <color name="skin_buttons">#BB6F30</color>
-    <color name="skin_btn_text">#D8BED5</color>
-    <color name="skin_background">#B173A6</color>
-    <color name="skin_main_text">#D8BED5</color>
-    <color name="skin_maze_walls">#C96515</color>
+    <color name="skinSunset_buttons">#BB6F30</color>
+    <color name="skinSunset_btn_text">#D8BED5</color>
+    <color name="skinSunset_background">#B173A6</color>
+    <color name="skinSunset_main_text">#D8BED5</color>
+    <color name="skinSunset_maze_walls">#C96515</color>
 
 </resources>
